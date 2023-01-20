@@ -1,0 +1,6 @@
+venv/
+.python-version
+requirements.dev.txt
+.pytest_cache
+__pycache__/
+poetry.lock
