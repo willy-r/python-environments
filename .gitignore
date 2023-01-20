@@ -3,4 +3,3 @@ venv/
 requirements.dev.txt
 .pytest_cache
 __pycache__/
-poetry.lock

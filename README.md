@@ -102,3 +102,15 @@ urllib3==1.26.14
 > To only get top-level dependecy (requests==2.28.2), you can check pip-chill for that.
 
 - It's great and easy, but we have a problem: we need to manage each `requirements.txt` depending on the environment we are in, for example a `requirements.txt` with the prod packages and a `requirements.dev.txt` with packages that we only use on development.
+
+
+### poetry
+
+- `poetry` is the most feature-rich dependency management tool for Python, it comes with a powerful CLI to create and manage Python projects.
+
+- Since Poetry is a more complicated too to use, I do recommend reading the [oficial docs](https://python-poetry.org/docs/) about it, it's easy when you get it.
+
+
+#### Usage
+
+@TODO
