@@ -108,9 +108,60 @@ urllib3==1.26.14
 
 - `poetry` is the most feature-rich dependency management tool for Python, it comes with a powerful CLI to create and manage Python projects.
 
-- Since Poetry is a more complicated too to use, I do recommend reading the [oficial docs](https://python-poetry.org/docs/) about it, it's easy when you get it.
+- Since Poetry is a more complicated to use, I do recommend reading the [oficial docs](https://python-poetry.org/docs/) about it, it's easy when you get it.
 
 
 #### Usage
+
+1. You can create a new project with everything configured just with the command: `poetry new <project-name>`
+> Or you can just init a poetry project with `poetry init`
+  - With that command it will create the following files and folders:
+  ```txt
+  sample-project
+  ├── README.md
+  ├── pyproject.toml
+  ├── sample_project
+  │   └── __init__.py
+  └── tests
+      ├── __init__.py
+      └── test_sample_project.py
+  ```
+  - Dependencies and configurations are managed inside the `pyproject.toml`:
+  ```toml
+  [tool.poetry]
+  name = "sample-project"
+  version = "0.1.0"
+  description = ""
+  authors = ["William Rodrigues <williamrodrigues2442@gmail.com>"]
+  readme = "README.md"
+  packages = [{include = "sample_project"}]
+
+  [tool.poetry.dependencies]
+  python = "^3.10"
+  flask = "^2.2.2"
+
+  [tool.poetry.group.dev.dependencies]
+  pytest = "^7.2.1"
+
+  [build-system]
+  requires = ["poetry-core"]
+  build-backend = "poetry.core.masonry.api"
+  ```
+
+2. To install (**add**) a new dependency, you can just run: `poetry add [--dev] <package-name>`
+> The --dev flag indicates that the dependency is meant to be used in development mode only. Development dependencies are not installed by default.
+  - **For example**: `poetry add flask`, this will download and install Flask inside the **virtual environment managed by Poetry**. It will add the dependecy to `poetry.lock` and will add it to dependency list (only top-level dependency) inside `pyproject.toml`
+
+3. You can also install a package only on development environement: `poetry add --dev pytest`
+
+4. You can run a command inside de virtual environement with the command: `poetry run python -m pytest`
+
+5. You can activate the virtual environment with: `poetry shell`
+> To deactivate simple run `deactivate` or `exit`
+
+- Poetry is great and works well with `pyenv` too!
+
+
+## Pipenv
 
 @TODO
